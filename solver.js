@@ -16,7 +16,7 @@ function myFunction() {
 		const MAX = 1000;
 		var sol = new Set();
 		for(var i = 0; i < RESTARTS; i++){
-			const MAX_ITERATIONS = 100;
+			const MAX_ITERATIONS = 1000;
 			var prev = Math.random() * MAX - MAX/2;
 			var curr = prev + 1;
 			var cnt = 0;
@@ -28,7 +28,9 @@ function myFunction() {
 					return "err";
 				}
 			}
-			sol.add(curr.toFixed(5));
+			if(!Number.isNaN(curr)){
+				sol.add(curr.toFixed(5));
+			}
 		}
 		return sol;	
 	}
