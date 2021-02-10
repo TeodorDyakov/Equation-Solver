@@ -12,11 +12,13 @@ function myFunction() {
 	}
 
 	function newton(){
+		const RESTARTS = 1000;
+		const MAX = 1000;
 		var sol = new Set();
-		for(var i = 0; i < 1000; i++){
-			const MAX_ITERATIONS = 1000;
-			var prev = Math.random() * 1000 - 500;
-			var curr = prev + 0.001;
+		for(var i = 0; i < RESTARTS; i++){
+			const MAX_ITERATIONS = 100;
+			var prev = Math.random() * MAX - MAX/2;
+			var curr = prev + 1;
 			var cnt = 0;
 			while(Math.abs(curr - prev) > EPSILON){
 				prev = curr;
